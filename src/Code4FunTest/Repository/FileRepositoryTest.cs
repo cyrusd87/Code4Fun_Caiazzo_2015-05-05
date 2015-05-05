@@ -12,6 +12,11 @@ namespace Code4FunTest.Repository
         [SetUp]
         public void SetUp()
         {
+            if (File.Exists(TestFile))
+            {
+                File.Delete(TestFile);
+            }
+
             using (var fileStream = new FileStream(TestFile, FileMode.CreateNew))
             {
                 using (var binaryWriter = new BinaryWriter(fileStream))
@@ -33,13 +38,6 @@ namespace Code4FunTest.Repository
             Assert.IsNotNull(result,"file should be loaded");
         }
 
-        [Test]
-        public void ShouldSaveTsvFile()
-        {
-            var loadedBinaryFile = _repository.Load(@".\test.dat");
-            _repository.Save(loadedBinaryFile);
-            
-        }
 
         [TearDown]
         public void TearDown()

@@ -1,4 +1,5 @@
-﻿using Code4Fun.Model;
+﻿using System.Linq;
+using Code4Fun.Model;
 
 namespace Code4Fun.Repository
 {
@@ -7,9 +8,9 @@ namespace Code4Fun.Repository
         public ITsvFile DeserializeTsv(string content)
         {
             var tsvFile = new TsvFile();
-            foreach (var line in content.Split('\n'))
+            foreach (var line in content.Split('\n').Where(x => !string.IsNullOrEmpty(x)))
             {
-                tsvFile.AddLine(DeserializeTsvLine(line));
+                tsvFile.AddLine(DeserializeTsvLine(line.Trim()));
             }
             return tsvFile;
         }

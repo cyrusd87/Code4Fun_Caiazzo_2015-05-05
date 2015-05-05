@@ -23,7 +23,12 @@ namespace Code4Fun.Repository
                 {
                     while (binaryReader.BaseStream.Position != binaryReader.BaseStream.Length)
                     {
-                        stringBuilder.AppendLine(binaryReader.ReadString());
+                        var stringRead = binaryReader.ReadString();
+
+                        if (!string.IsNullOrWhiteSpace(stringRead))
+                        {
+                            stringBuilder.AppendLine(stringRead);
+                        }
                     }
                 }
                 
@@ -31,9 +36,5 @@ namespace Code4Fun.Repository
             return _serializator.DeserializeTsv(stringBuilder.ToString());
         }
 
-        public void Save(ITsvFile tsvFile)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
