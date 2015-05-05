@@ -6,6 +6,7 @@ namespace Code4FunTest.Repository
 {
     public class FileRepositoryTest
     {
+        private FileRepository _repository;
         private const string TestFile = @".\test.dat";
 
         [SetUp]
@@ -19,14 +20,15 @@ namespace Code4FunTest.Repository
                     binaryWriter.Write("latency_ms\t70");
                     binaryWriter.Write("bandwidth\t20");
                 }
-            }      
+            }
+
+            _repository = new FileRepository(new BinaryToTsvFileAdapter());
         }
 
         [Test]
         public void ShouldLoadBinaryFile()
         {
-            var repository = new FileBinaryRepository();
-            var result = repository.Load(@".\test.dat");
+            var result = _repository.Load(@".\test.dat");
 
             Assert.IsNotNull(result,"file should be loaded");
         }
@@ -34,6 +36,8 @@ namespace Code4FunTest.Repository
         [Test]
         public void ShouldSaveTsvFile()
         {
+            var loadedBinaryFile = _repository.Load(@".\test.dat");
+            _repository.Save(loadedBinaryFile);
             
         }
 
