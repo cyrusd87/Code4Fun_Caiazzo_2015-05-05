@@ -2,8 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using Code4Fun.Model;
-using Code4Fun.Repository;
+using Code4Fun.Core.Model;
+using Code4Fun.Core.Repository;
 using NUnit.Framework;
 
 namespace Code4FunTest.Repository

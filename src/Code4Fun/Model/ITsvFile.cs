@@ -1,4 +1,4 @@
-﻿namespace Code4Fun.Model
+﻿namespace Code4Fun.Core.Model
 {
     public interface ITsvFile
     {

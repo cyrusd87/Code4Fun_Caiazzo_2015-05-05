@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Code4Fun.Model;
-using Code4Fun.Services;
+using Code4Fun.Core.Model;
+using Code4Fun.Core.Services;
 using NUnit.Framework;
 
 namespace Code4FunTest.Services

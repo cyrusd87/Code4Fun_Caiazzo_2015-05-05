@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Text;
-using Code4Fun.Model;
+using Code4Fun.Core.Model;
 
-namespace Code4Fun.Repository
+namespace Code4Fun.Core.Repository
 {
     public class FileRepository : IRepository
     {

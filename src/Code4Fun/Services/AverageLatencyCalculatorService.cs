@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Code4Fun.Model;
+using Code4Fun.Core.Model;
 
-namespace Code4Fun.Services
+namespace Code4Fun.Core.Services
 {
     public class AverageLatencyCalculatorService : ICalculatorService
     {
@@ -15,9 +15,9 @@ namespace Code4Fun.Services
         public double Calculate()
         {
             var latencyLines = _tsvFiles.SelectMany(x => x.TsvLines).Where(x => x.Key.Equals("latency_ms")).ToArray();
+            
             if (latencyLines.Any())
             {
-
                 return latencyLines.Average(x => double.Parse(x.Value));
             }
             return 0.0;

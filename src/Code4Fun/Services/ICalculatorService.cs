@@ -1,4 +1,4 @@
-﻿namespace Code4Fun.Services
+﻿namespace Code4Fun.Core.Services
 {
     public interface ICalculatorService
     {

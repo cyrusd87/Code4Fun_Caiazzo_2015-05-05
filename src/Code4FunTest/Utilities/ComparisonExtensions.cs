@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Code4Fun.Model;
+using Code4Fun.Core.Model;
 using KellermanSoftware.CompareNetObjects;
 
 namespace Code4FunTest.Utilities

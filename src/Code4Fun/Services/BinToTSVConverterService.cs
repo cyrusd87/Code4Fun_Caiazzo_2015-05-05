@@ -1,7 +1,7 @@
 ﻿
-using Code4Fun.Repository;
+using Code4Fun.Core.Repository;
 
-namespace Code4Fun.Services
+namespace Code4Fun.Core.Services
 {
     public class BinToTsvConverterService
     {

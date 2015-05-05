@@ -50,6 +50,7 @@
     <Compile Include="Repository\FileRepositoryTest.cs" />
     <Compile Include="Services\AverageLatencyCalculatorServiceTest.cs" />
     <Compile Include="Services\BinToTsvConverterServiceTest.cs" />
+    <Compile Include="Services\TotalBandWidthCalculatorServiceTest.cs" />
     <Compile Include="Utilities\ComparisonExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

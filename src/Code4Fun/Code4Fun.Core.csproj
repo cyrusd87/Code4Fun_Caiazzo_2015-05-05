@@ -7,8 +7,8 @@
     <ProjectGuid>{D8B92053-BA3F-4DDF-8945-91243BC7C8E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Code4Fun</RootNamespace>
-    <AssemblyName>Code4Fun</AssemblyName>
+    <RootNamespace>Code4Fun.Core</RootNamespace>
+    <AssemblyName>Code4Fun.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,6 +51,7 @@
     <Compile Include="Services\AverageLatencyCalculatorService.cs" />
     <Compile Include="Services\BinToTSVConverterService.cs" />
     <Compile Include="Services\ICalculatorService.cs" />
+    <Compile Include="Services\TotalBandWidthCalculatorService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

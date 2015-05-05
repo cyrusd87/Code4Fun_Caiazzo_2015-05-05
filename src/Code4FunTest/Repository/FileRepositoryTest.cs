@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using Code4Fun.Model;
-using Code4Fun.Repository;
+using Code4Fun.Core.Model;
+using Code4Fun.Core.Repository;
 using Code4FunTest.Utilities;
 using NUnit.Framework;
 

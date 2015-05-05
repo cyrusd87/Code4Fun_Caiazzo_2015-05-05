@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Code4Fun.Model
+namespace Code4Fun.Core.Model
 {
     public class TsvFile : ITsvFile
     {
