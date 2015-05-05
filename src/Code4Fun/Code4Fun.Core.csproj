@@ -48,7 +48,9 @@
     <Compile Include="Model\ITsvFile.cs" />
     <Compile Include="Model\TsvFile.cs" />
     <Compile Include="Model\TsvLine.cs" />
+    <Compile Include="Services\AverageLatencyCalculatorService.cs" />
     <Compile Include="Services\BinToTSVConverterService.cs" />
+    <Compile Include="Services\ICalculatorService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

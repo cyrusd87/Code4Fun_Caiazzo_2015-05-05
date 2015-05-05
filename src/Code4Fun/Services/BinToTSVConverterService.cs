@@ -1,13 +1,22 @@
-﻿namespace Code4Fun.Services
+﻿
+using Code4Fun.Repository;
+
+namespace Code4Fun.Services
 {
     public class BinToTsvConverterService
     {
-        
-        
-        public string Convert(string fileName)
-        {
+        private readonly IRepository _repository;
 
-            return null;
+        public BinToTsvConverterService(IRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public void Convert(string fileName)
+        {
+            var tsvFile = _repository.LoadBinary(fileName);
+            _repository.Save(tsvFile, fileName);
+
         }
     }
 }

@@ -38,12 +38,13 @@ namespace Code4Fun.Repository
         public ITsvFile LoadTsvFile(string fileName)
         {
             var content = File.ReadAllLines(fileName);
-            return _serializator.DeserializeTsv(string.Join("\n",content));
+            return _serializator.DeserializeTsv(string.Join("\n", content));
         }
 
         public void Save(ITsvFile tsvFile, string fileName)
         {
             var serialized = _serializator.SerializeTsv(tsvFile);
+            fileName = Path.ChangeExtension(fileName, ".tsv");
             File.WriteAllText(fileName,serialized);
         }
     }
