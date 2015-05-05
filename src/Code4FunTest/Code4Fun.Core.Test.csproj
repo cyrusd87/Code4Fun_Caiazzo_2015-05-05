@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects">
+      <HintPath>..\Code4Fun\packages\CompareNETObjects.3.02.0.0\lib\net45\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\Code4Fun\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -45,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BinaryToTsvFileAdapterTest.cs" />
     <Compile Include="Repository\FileRepositoryTest.cs" />
+    <Compile Include="Utilities\ComparisonExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

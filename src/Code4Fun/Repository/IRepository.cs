@@ -4,7 +4,8 @@ namespace Code4Fun.Repository
 {
     public interface IRepository
     {
-        ITsvFile Load(string fileName);
+        ITsvFile LoadBinary(string fileName);
+        ITsvFile LoadTsvFile(string fileName);
         void Save(ITsvFile tsvFile, string fileName);
     }
 }

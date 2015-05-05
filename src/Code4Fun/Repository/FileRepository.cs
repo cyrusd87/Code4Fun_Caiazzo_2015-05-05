@@ -13,14 +13,14 @@ namespace Code4Fun.Repository
             _serializator = serializator;
         }
 
-        public ITsvFile Load(string fileName)
+        public ITsvFile LoadBinary(string fileName)
         {
             var stringBuilder = new StringBuilder();
             using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 using (var binaryReader = new BinaryReader(fileStream))
                 {
-                    while (binaryReader.BaseStream.Position != binaryReader.BaseStream.Length)
+                    while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
                     {
                         var stringRead = binaryReader.ReadString();
 
@@ -34,7 +34,13 @@ namespace Code4Fun.Repository
 
             return _serializator.DeserializeTsv(stringBuilder.ToString());
         }
-       
+
+        public ITsvFile LoadTsvFile(string fileName)
+        {
+            var content = File.ReadAllLines(fileName);
+            return _serializator.DeserializeTsv(string.Join("\n",content));
+        }
+
         public void Save(ITsvFile tsvFile, string fileName)
         {
             var serialized = _serializator.SerializeTsv(tsvFile);
