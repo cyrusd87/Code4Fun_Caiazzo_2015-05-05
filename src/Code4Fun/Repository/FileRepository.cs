@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using Code4Fun.Model;
 
@@ -31,10 +30,15 @@ namespace Code4Fun.Repository
                         }
                     }
                 }
-                
             }
+
             return _serializator.DeserializeTsv(stringBuilder.ToString());
         }
-
+       
+        public void Save(ITsvFile tsvFile, string fileName)
+        {
+            var serialized = _serializator.SerializeTsv(tsvFile);
+            File.WriteAllText(fileName,serialized);
+        }
     }
 }
