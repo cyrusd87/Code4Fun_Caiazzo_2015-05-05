@@ -21,9 +21,9 @@ namespace Code4Fun.Repository
             var serialized = new StringBuilder();
             foreach (var tsvLine in tsvFile.TsvLines)
             {
-                serialized.AppendLine(string.Format("{0}\t{1}",tsvLine.Key,tsvLine.Value));
+                serialized.AppendLine(string.Format("{0}\t{1}",tsvLine.Key,tsvLine.Value).Trim());
             }
-            return serialized.ToString();
+            return serialized.Replace("\r","").ToString();
         }
 
         private ITsvLine DeserializeTsvLine(string content)

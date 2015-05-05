@@ -19,8 +19,8 @@ namespace Code4FunTest.Repository
         [SetUp]
         public void SetUp()
         {
-            _testLine = "key\tvalue";
-            _testMoreLines = "key1\tvalue1\nkey2\tvalue2";
+            _testLine = "key\tvalue\n";
+            _testMoreLines = "key1\tvalue1\nkey2\tvalue2\n";
             _sut = new BinaryToTsvFileAdapter();
 
             _tsvFile = new TsvFile();
@@ -65,11 +65,19 @@ namespace Code4FunTest.Repository
                 var splittedline = line.Split('\t');
 
                 tsvFile.AddLine(new TsvLine(splittedline[0], splittedline[1]));
-                expectedResult.AppendLine(line);
+                expectedResult.AppendLine(line.Trim());
             }
             var serialized = _sut.SerializeTsv(tsvFile);
-            Assert.AreEqual(expectedResult.ToString(),serialized,string.Format("{0}: Expected and actual serialized should be equal",testCase));
+            Assert.AreEqual(expectedResult.ToString().Replace("\r",""),serialized,string.Format("{0}: Expected and actual serialized should be equal",testCase));
 
+        }
+
+        [Test]
+        public void DeserializedAndSerializedTsvFileShouldBeEqual()
+        {
+            _tsvFileDeserializeResult = _sut.DeserializeTsv(_testMoreLines);
+            var serialized = _sut.SerializeTsv(_tsvFileDeserializeResult);
+            Assert.AreEqual(_testMoreLines, serialized, "original and serialized tsv should be equal");
         }
 
         private void AssertLine(string key, string value,ITsvLine resultLine)
