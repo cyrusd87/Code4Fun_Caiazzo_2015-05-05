@@ -1,0 +1,29 @@
+﻿<Window x:Class="Code4Fun.App.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainView" Height="210" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Button Content="Convert binary file to tsv" Grid.Row="0" Command="{Binding ConvertBinaryToTsvCommand}"/>
+        <Button Content="Convert binary files to tsv files" Grid.Row="1" Command="{Binding ConvertBinariesToTsvCommand}"/>
+        <Button Content="Calculate latency average from binary files" Grid.Row="2" Command="{Binding CalculateLatencyAverageFromBinariesCommand}"/>
+        <Button Content="Calculate total bandwidth from binary files" Grid.Row="3" Command="{Binding CalculateTotalBandwidthFromBinariesCommand}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center">
+            <TextBlock Text="AVERAGE LATENCY: " />
+            <TextBlock Text="{Binding AverageLatencyText}" Margin="10,0,0,0" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center">
+            <TextBlock Text="TOTAL BANDWIDTH: "/>
+            <TextBlock Text="{Binding TotalBandWidthText}" Margin="10,0,0,0" FontWeight="Bold"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
