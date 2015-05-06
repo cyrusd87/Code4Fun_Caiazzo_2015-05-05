@@ -11,7 +11,7 @@ namespace Code4Fun.App.Test.Commands
     public class ConvertBinaryToTsvCommandTest
     {
         private const string TestPath = @"..\..\..\..\test-baselines";
-        private const string binaryFile = @"..\..\..\..\test-baselines\binary1.dat";
+        private const string BinaryFile = @"..\..\..\..\test-baselines\binary1.dat";
 
         private MockRepository _mockRepository;
         private Mock<IPresenter> _mockPresenter;
@@ -43,7 +43,7 @@ namespace Code4Fun.App.Test.Commands
         public void ShouldNotifySuccess()
         {
             _mockPresenter.Setup(x => x.Notify(It.IsAny<string>()));
-            var sut = new ConvertBinaryToTsvCommand(new FileRepository(new BinaryToTsvFileAdapter()), new FakeChooseFileName(binaryFile), _mockPresenter.Object);
+            var sut = new ConvertBinaryToTsvCommand(new FileRepository(new BinaryToTsvFileAdapter()), new FakeChooseFileName(BinaryFile), _mockPresenter.Object);
             sut.Execute(null);
         }
 
