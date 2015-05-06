@@ -62,7 +62,7 @@
     <Compile Include="Commands\IChooserFileName.cs" />
     <Compile Include="Commands\ConvertBinariesToTsvCommand.cs" />
     <Compile Include="Commands\IChooserDirectoryName.cs" />
-    <Compile Include="ICalculatorResultPresenter.cs" />
+    <Compile Include="Presenters\ICalculatorResultPresenter.cs" />
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Presenters\MessagePresenter.cs" />
     <Page Include="MainView.xaml">
