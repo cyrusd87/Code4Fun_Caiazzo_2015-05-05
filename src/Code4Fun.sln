@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.Core", "Code4Fun.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.Core.Test", "Code4Fun.Core.Test\Code4Fun.Core.Test.csproj", "{10440B94-B83B-4D97-855B-E287C0DB215A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BDE952D2-E95E-4A61-86C2-44776E53BD8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25629635-7D43-4E40-B02F-E894D0EADC67} = {BDE952D2-E95E-4A61-86C2-44776E53BD8E}
+		{10440B94-B83B-4D97-855B-E287C0DB215A} = {BDE952D2-E95E-4A61-86C2-44776E53BD8E}
 	EndGlobalSection
 EndGlobal

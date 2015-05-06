@@ -36,7 +36,7 @@
       <HintPath>..\packages\CompareNETObjects.3.02.0.0\lib\net40\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\Code4Fun\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
