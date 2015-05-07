@@ -1,6 +1,6 @@
 ﻿namespace Code4Fun.Core.Model
 {
-    public class TsvLine : ITsvLine
+    public class TsvLine 
     {
         public TsvLine(string key, string value)
         {

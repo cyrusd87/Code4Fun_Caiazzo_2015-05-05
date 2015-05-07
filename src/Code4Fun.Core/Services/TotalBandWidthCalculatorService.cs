@@ -3,9 +3,9 @@ using Code4Fun.Core.Model;
 
 namespace Code4Fun.Core.Services
 {
-    public class TotalBandWidthCalculatorService : ICalculatorService
+    public class TotalBandWidthCalculatorService 
     {
-        public double Calculate(ITsvFile[] tsvFiles)
+        public double Calculate(TsvFile[] tsvFiles)
         {
             var bandWidthLines = tsvFiles.SelectMany(x => x.TsvLines).Where(x => x.Key.Equals("bandwidth")).ToArray();
 

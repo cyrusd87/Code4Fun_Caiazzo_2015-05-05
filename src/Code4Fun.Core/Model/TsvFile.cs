@@ -2,17 +2,17 @@
 
 namespace Code4Fun.Core.Model
 {
-    public class TsvFile : ITsvFile
+    public class TsvFile 
     {
-        private readonly List<ITsvLine> _tsvLines;
-        public ITsvLine[] TsvLines { get { return _tsvLines.ToArray(); } }
+        private readonly List<TsvLine> _tsvLines;
+        public TsvLine[] TsvLines { get { return _tsvLines.ToArray(); } }
 
         public TsvFile()
         {
-            _tsvLines = new List<ITsvLine>();
+            _tsvLines = new List<TsvLine>();
         }
 
-        public void AddLine(ITsvLine line)
+        public void AddLine(TsvLine line)
         {
             _tsvLines.Add(line);
         }

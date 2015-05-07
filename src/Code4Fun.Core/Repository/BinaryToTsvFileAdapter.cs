@@ -4,9 +4,9 @@ using Code4Fun.Core.Model;
 
 namespace Code4Fun.Core.Repository
 {
-    public class BinaryToTsvFileAdapter : IBinaryToTsvSerializator
+    public class BinToTsvFileAdapter 
     {
-        public ITsvFile DeserializeTsv(string content)
+        public TsvFile DeserializeTsv(string content)
         {
             var tsvFile = new TsvFile();
             foreach (var line in content.Split('\n').Where(x => !string.IsNullOrEmpty(x)))
@@ -16,17 +16,7 @@ namespace Code4Fun.Core.Repository
             return tsvFile;
         }
 
-        public string SerializeTsv(ITsvFile tsvFile)
-        {
-            var serialized = new StringBuilder();
-            foreach (var tsvLine in tsvFile.TsvLines)
-            {
-                serialized.AppendLine(string.Format("{0}\t{1}",tsvLine.Key,tsvLine.Value).Trim());
-            }
-            return serialized.Replace("\r","").ToString();
-        }
-
-        private ITsvLine DeserializeTsvLine(string content)
+        private TsvLine DeserializeTsvLine(string content)
         {
             var tsvLineString = content.Split('\t');
             return new TsvLine(tsvLineString[0], tsvLineString[1]);

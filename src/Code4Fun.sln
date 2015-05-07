@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.App", "Code4Fun.App\Code4Fun.App.csproj", "{C97D436E-7548-4085-884A-584DE80CB851}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.App.Test", "Code4Fun.App.Test\Code4Fun.App.Test.csproj", "{25629635-7D43-4E40-B02F-E894D0EADC67}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.Core", "Code4Fun.Core\Code4Fun.Core.csproj", "{D8B92053-BA3F-4DDF-8945-91243BC7C8E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code4Fun.Core.Test", "Code4Fun.Core.Test\Code4Fun.Core.Test.csproj", "{10440B94-B83B-4D97-855B-E287C0DB215A}"
@@ -19,14 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C97D436E-7548-4085-884A-584DE80CB851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C97D436E-7548-4085-884A-584DE80CB851}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C97D436E-7548-4085-884A-584DE80CB851}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C97D436E-7548-4085-884A-584DE80CB851}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25629635-7D43-4E40-B02F-E894D0EADC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25629635-7D43-4E40-B02F-E894D0EADC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25629635-7D43-4E40-B02F-E894D0EADC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25629635-7D43-4E40-B02F-E894D0EADC67}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8B92053-BA3F-4DDF-8945-91243BC7C8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8B92053-BA3F-4DDF-8945-91243BC7C8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B92053-BA3F-4DDF-8945-91243BC7C8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,7 +28,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{25629635-7D43-4E40-B02F-E894D0EADC67} = {BDE952D2-E95E-4A61-86C2-44776E53BD8E}
 		{10440B94-B83B-4D97-855B-E287C0DB215A} = {BDE952D2-E95E-4A61-86C2-44776E53BD8E}
 	EndGlobalSection
 EndGlobal

@@ -32,21 +32,21 @@ namespace Code4Fun.Core.Test.Services
         public void ShouldReturnZeroWhenNoLatenciesArePresent()
         {
             var sut = new AverageLatencyCalculatorService();
-            Assert.AreEqual(0.0, sut.Calculate(new ITsvFile[] { _tsvFile3 }), "should return 0 if no latency key are present");
+            Assert.AreEqual(0.0, sut.Calculate(new TsvFile[] { _tsvFile3 }), "should return 0 if no latency key are present");
         }
 
         [Test]
         public void ShouldReturnZeroWithEmptyTsvFile()
         {
             var sut = new AverageLatencyCalculatorService();
-            Assert.AreEqual(0.0, sut.Calculate(new ITsvFile[] { new TsvFile() }), "should return 0 if no tsv line are present");
+            Assert.AreEqual(0.0, sut.Calculate(new TsvFile[] { new TsvFile() }), "should return 0 if no tsv line are present");
         }
 
         [Test]
         public void ShouldReturnZeroWithEmptyTsvFilesArray()
         {
             var sut = new AverageLatencyCalculatorService();
-            Assert.AreEqual(0.0, sut.Calculate(new ITsvFile[0]), "should return 0 if tsv lines array has no entry");
+            Assert.AreEqual(0.0, sut.Calculate(new TsvFile[0]), "should return 0 if tsv lines array has no entry");
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace Code4Fun.Core.Test.Services
             var tsvFile = new TsvFile();
             tsvFile.AddLine(new TsvLine("key", "value"));
             var sut = new AverageLatencyCalculatorService();
-            Assert.AreEqual(77.5, sut.Calculate(new ITsvFile[] { _tsvFile1, _tsvFile2, _tsvFile3 }), "should return 0 if no latency key are present");
+            Assert.AreEqual(77.5, sut.Calculate(new TsvFile[] { _tsvFile1, _tsvFile2, _tsvFile3 }), "should return 0 if no latency key are present");
         }
 
     }

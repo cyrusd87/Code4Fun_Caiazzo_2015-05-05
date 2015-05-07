@@ -4,16 +4,16 @@ using Code4Fun.Core.Model;
 
 namespace Code4Fun.Core.Repository
 {
-    public class FileRepository : IRepository
+    public class BinToTsvConverter 
     {
-        private readonly IBinaryToTsvSerializator _serializator;
+        private readonly BinToTsvFileAdapter _serializator;
 
-        public FileRepository(IBinaryToTsvSerializator serializator)
+        public BinToTsvConverter(BinToTsvFileAdapter serializator)
         {
             _serializator = serializator;
         }
 
-        public ITsvFile LoadBinary(string fileName)
+        public TsvFile Convert(string fileName)
         {
             var stringBuilder = new StringBuilder();
             using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
@@ -33,19 +33,6 @@ namespace Code4Fun.Core.Repository
             }
 
             return _serializator.DeserializeTsv(stringBuilder.ToString());
-        }
-
-        public ITsvFile LoadTsvFile(string fileName)
-        {
-            var content = File.ReadAllLines(fileName);
-            return _serializator.DeserializeTsv(string.Join("\n", content));
-        }
-
-        public void Save(ITsvFile tsvFile, string fileName)
-        {
-            var serialized = _serializator.SerializeTsv(tsvFile);
-            fileName = Path.ChangeExtension(fileName, ".tsv");
-            File.WriteAllText(fileName,serialized);
         }
     }
 }
